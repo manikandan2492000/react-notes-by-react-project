@@ -3,8 +3,21 @@
 .codeBlock {
     border-radius: var(--border-radius);
     overflow: hidden;
+    overflow-x: auto;
     margin: var(--spacing-md) 0;
     border: 1px solid var(--border-color);
+    max-width: 100%;
+
+    pre {
+        margin: 0;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    code {
+        display: block;
+        overflow-x: auto;
+    }
 }
 
 .header {

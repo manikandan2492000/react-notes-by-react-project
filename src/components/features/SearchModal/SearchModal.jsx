@@ -122,9 +122,14 @@ const SearchModal = ({ isOpen, onClose, searchQuery, setSearchQuery }) => {
                 </div>
 
                 <div className={styles.footer}>
-                    <span className={styles.hint}>
-                        <kbd>ESC</kbd> to close
-                    </span>
+                    <button
+                        onClick={onClose}
+                        className={styles.closeButton}
+                        aria-label="Close search"
+                    >
+                        <X size={16} />
+                        <span>Close</span>
+                    </button>
                 </div>
             </div>
         </div>

@@ -3,12 +3,16 @@
 
 .container {
     animation: fadeIn 0.3s ease-in-out;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 .header {
     margin-bottom: var(--spacing-xl);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: var(--spacing-md);
+    overflow-x: hidden;
 }
 
 .category {
@@ -23,6 +27,9 @@
     font-size: 2.5rem;
     margin-top: var(--spacing-xs);
     color: var(--text-primary);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 
     @include mobile {
         font-size: 2rem;

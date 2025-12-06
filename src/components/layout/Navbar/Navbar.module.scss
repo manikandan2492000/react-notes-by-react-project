@@ -72,6 +72,21 @@
     border: 1px solid var(--border-color);
 }
 
+.searchBtnMobile {
+    display: none;
+    color: var(--text-primary);
+    padding: var(--spacing-sm);
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--accent-color);
+    }
+
+    @include mobile {
+        display: block;
+    }
+}
+
 .themeBtn {
     padding: var(--spacing-sm);
 }

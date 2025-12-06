@@ -23,6 +23,10 @@ const Navbar = ({ onMenuClick, onSearchClick }) => {
                     <span className={styles.shortcut}>Ctrl+K</span>
                 </div>
 
+                <button className={styles.searchBtnMobile} onClick={onSearchClick} aria-label="Search">
+                    <Search size={20} />
+                </button>
+
                 <Button variant="secondary" onClick={toggleTheme} className={styles.themeBtn}>
                     {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
                 </Button>
