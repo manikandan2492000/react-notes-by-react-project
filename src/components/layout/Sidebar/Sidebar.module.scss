@@ -1,0 +1,109 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.sidebar {
+    width: 280px;
+    height: calc(100vh - 64px);
+    position: fixed;
+    top: 64px;
+    left: 0;
+    border-right: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    overflow-y: auto;
+    z-index: 90;
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+
+    @include mobile {
+        transform: translateX(-100%);
+        height: 100vh;
+        top: 0;
+        z-index: 200;
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+}
+
+.header {
+    display: none;
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+        display: flex;
+    }
+}
+
+.content {
+    padding: var(--spacing-md);
+}
+
+.category {
+    margin-bottom: var(--spacing-sm);
+}
+
+.categoryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s;
+    color: var(--text-secondary);
+
+    &:hover {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+
+    h3 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.link {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-left: calc(var(--spacing-md) + 12px);
+    /* Indent sub-items */
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    margin-bottom: 2px;
+
+    &:hover {
+        background-color: var(--bg-tertiary);
+    }
+
+    &.active {
+        background-color: rgba(97, 218, 251, 0.1);
+        /* React Blue with opacity */
+        color: var(--accent-color);
+        font-weight: 500;
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 150;
+    backdrop-filter: blur(2px);
+
+    @include mobile {
+        display: block;
+    }
+}

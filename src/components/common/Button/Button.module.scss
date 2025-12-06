@@ -1,0 +1,29 @@
+@import '../../../styles/variables';
+
+.button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    &.primary {
+        background-color: var(--accent-color);
+        color: #000;
+
+        &:hover {
+            background-color: var(--accent-hover);
+        }
+    }
+
+    &.secondary {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+
+        &:hover {
+            background-color: var(--border-color);
+        }
+    }
+}
